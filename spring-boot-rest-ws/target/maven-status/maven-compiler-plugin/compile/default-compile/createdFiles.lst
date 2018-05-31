@@ -1,0 +1,16 @@
+META-INF\MANIFEST.MF
+com\spring\restws\model\User.class
+com\spring\restws\service\IUserService.class
+com\spring\restws\controller\HelloWorldController.class
+com\spring\restws\exceptions\RestWsResponseEntityExceptionHandler.class
+com\spring\restws\dao\IUserDao.class
+com\spring\restws\RestWsApplication.class
+com\spring\restws\exceptions\UserNotFoundException.class
+META-INF\maven\com.spring\spring-boot-rest-ws\pom.xml
+com\spring\restws\controller\UserController.class
+com\spring\restws\config\SwaggerConfig.class
+com\spring\restws\exceptions\ExceptionResponse.class
+com\spring\restws\dao\impl\UserDaoImpl.class
+com\spring\restws\service\impl\UserServiceImpl.class
+META-INF\maven\com.spring\spring-boot-rest-ws\pom.properties
+com\spring\restws\model\HelloWorldBean.class
