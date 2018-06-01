@@ -1,15 +1,16 @@
 package com.spring.restws.dao.impl;
 
-import com.spring.restws.dao.IUserDao;
-import com.spring.restws.model.User;
-import org.springframework.stereotype.Component;
-
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
 
-@Component
+import org.springframework.stereotype.Repository;
+
+import com.spring.restws.dao.IUserDao;
+import com.spring.restws.model.User;
+
+@Repository
 public class UserDaoImpl implements IUserDao {
     private static List<User> users = new ArrayList<>();
 

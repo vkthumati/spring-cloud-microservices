@@ -1,14 +1,15 @@
 package com.spring.restws.service.impl;
 
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import com.spring.restws.dao.IUserDao;
 import com.spring.restws.model.User;
 import com.spring.restws.service.IUserService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 
-import java.util.List;
-
-@Component
+@Service
 public class UserServiceImpl implements IUserService {
 
     @Autowired
