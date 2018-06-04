@@ -19,6 +19,8 @@ http://localhost:8000/h2-console/login.do?jsessionid=a391577eddd652358960322e59c
 
 #### Mac
 - https://www.rabbitmq.com/install-homebrew.html
+##### Installation Directory on MAC
+-/usr/local/Cellar/rabbitmq/3.7.5
 
 To have launchd start rabbitmq now and restart at login:
   brew services start rabbitmq
