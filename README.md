@@ -34,3 +34,11 @@ Or, if you don't want/need a background service you can just run:
   - RABBIT_URI=amqp://localhost java -jar zipkin.jar
   # Zipkin Admin UI
   - http://localhost:9411/zipkin/
+
+# Actuator URL's
+    ## Actuator URL
+    - http://localhost:8080/actuator/
+    ## Actuator Bus Refresh
+    - http://localhost:8080/actuator/bus-refresh
+
+#
