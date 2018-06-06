@@ -40,3 +40,8 @@ Or, if you don't want/need a background service you can just run:
    - http://localhost:8080/actuator/
    ## Actuator Bus Refresh
    - http://localhost:8080/actuator/bus-refresh
+
+# Hystrix Dashboard URL
+- http://localhost:8082/hystrix
+-http://localhost:8082/hystrix.stream
+
