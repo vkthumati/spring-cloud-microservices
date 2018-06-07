@@ -43,5 +43,6 @@ Or, if you don't want/need a background service you can just run:
 
 # Hystrix Dashboard URL
 - http://localhost:8082/hystrix
-- http://localhost:8082/hystrix.stream
+- http://localhost:8080/actuator/hystrix.stream
+- http://localhost:8080/actuator/health
 
