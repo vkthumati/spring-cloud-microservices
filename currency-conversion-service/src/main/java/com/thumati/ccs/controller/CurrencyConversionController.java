@@ -1,20 +1,21 @@
 package com.thumati.ccs.controller;
 
-import com.thumati.ccs.model.CurrencyConversion;
-import com.thumati.ccs.proxy.CurrencyExchangeServiceProxy;
+import java.math.BigDecimal;
+import java.util.HashMap;
+import java.util.Map;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
-import java.math.BigDecimal;
-import java.util.HashMap;
-import java.util.Map;
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
+import com.thumati.ccs.model.CurrencyConversion;
+import com.thumati.ccs.proxy.CurrencyExchangeServiceProxy;
 
 @RestController
 public class CurrencyConversionController {
@@ -53,4 +54,17 @@ public class CurrencyConversionController {
                 quantity.multiply(currencyConversion.getConversionMultiple()), currencyConversion.getPort());
 
     }
+    
+    @GetMapping("/currency-converter-fault-tolerance/from/{from}/to/{to}/quantity/{quantity}")
+    @HystrixCommand(fallbackMethod="getDefaultCurrencyConverter")
+    public CurrencyConversion convertCurrencyFaultTolerance(@PathVariable String from, @PathVariable String to, @PathVariable BigDecimal quantity){
+    		logger.info("CCS Response {} ","hello CCS fault tolerance");
+    		throw new RuntimeException("Not Available");
+    }
+    						  
+    public CurrencyConversion getDefaultCurrencyConverter(String from, String to, BigDecimal quantity) {
+    	logger.info("CCS Response {} ","hello CCS fallback method");
+    	return new CurrencyConversion(10001L, "USD", "INR", BigDecimal.valueOf(65), BigDecimal.valueOf(1000), BigDecimal.valueOf(1000*65), 8100);
+    }
+    
 }
