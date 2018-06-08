@@ -55,4 +55,10 @@ Or, if you don't want/need a background service you can just run:
 - http://localhost:8082/hystrix
 - http://localhost:8080/actuator/hystrix.stream
 - http://localhost:8080/actuator/health
-
+- http://localhost:9090/clusters
+- http://localhost:9090/hystrix
+- http://localhost:8080/actuator/hystrix.stream
+- http://localhost:8081/actuator/hystrix.stream
+- http://localhost:8082/actuator/hystrix.stream
+- http://localhost:9090/turbine.stream?cluster=LIMITS-SERVICE
+- http://localhost:9100
